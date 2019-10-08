@@ -9,16 +9,16 @@ int main(){
     cin >> num1 >> num2;
     switch(op)
     {
-        case '+':
+        case '+': // Adds num1 by num2
             cout << num1+num2;
             break;
-        case '-':
+        case '-': // Subtracts num1 by num2
             cout << num1-num2;
             break;
-        case '*':
+        case '*': // Multiplies num1 by num2
             cout << num1*num2;
             break;
-        case '/':
+        case '/': // Divides num1 by num2
             cout << num1/num2;
             break;
         default:
@@ -26,5 +26,5 @@ int main(){
             cout << "Error! operator is not correct";
             break;
     }
-    return 0;
+	return 0;
 }
