@@ -10,10 +10,10 @@ int main(){
     switch(op)
     {
         case '+':
-            cout << num1+num2;
+            cout << num1 + num2;
             break;
         case '-':
-            cout << num1-num2;
+            cout << num1 - num2;
             break;
         case '*':
             cout << num1*num2;
