@@ -10,6 +10,7 @@ int main() {
     cin >> num1 >> num2;
     switch(op)
     {
+
         case '+': // Adds num1 by num2
             cout << num1+num2;
             break;
