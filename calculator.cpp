@@ -1,38 +1,89 @@
-#include <iostream>
+#include "calculator.hpp"
 
-int main() {
+double Calculator::add(double x, double y){
+    history.push_back(std::pair<std::string, double>((std::to_string(x) + " + " + std::to_string(y)), x+y));
+    return x + y;
+}
+
+double Calculator::subtract(double x, double y){
+    history.push_back(std::pair<std::string, double>((std::to_string(x) + " - " + std::to_string(y)), x-y));
+    return x - y;
+}
+
+double Calculator::multiply(double x, double y){
+    history.push_back(std::pair<std::string, double>((std::to_string(x) + " * " + std::to_string(y)), x*y));
+    return x * y;
+}
+
+double Calculator::divide(double x, double y){
+    history.push_back(std::pair<std::string, double>((std::to_string(x) + " / " + std::to_string(y)), x/y));
+    return x / y;
+}
+
+double Calculator::modulo(int x, int y){
+    history.push_back(std::pair<std::string, double>((std::to_string(x) + " % " + std::to_string(y)), x%y));
+    return x % y;
+}
+
+double Calculator::calculate(std::string equation){
+    std::stringstream first_num;
+    std::stringstream second_num;
     char op;
-    float num1, num2;
+    bool found_op = false;
+    double answer;
 
-
-    std::cout << "Enter the mathematical statment: Number (+, -, *, /, %) Number:" << std::endl;
-    std::cin >> num1 >> op >> num2;
-
-    switch(op)
-    {
-
-        case '+': // Adds num1 by num2
-            cout << num1+num2;
-            break;
-        case '-': // Subtracts num1 by num2
-            cout << num1-num2;
-            break;
-        case '*': // Multiplies num1 by num2
-            cout << num1*num2;
-            break;
-        case '/': // Divides num1 by num2
-            cout << num1/num2;
-
-            break;
-        case '%':
-            std::cout << num1 % num2;
-            break;
-        default:
-            // If the operator is other than +, -, * or /, error message is shown
-            std::cout << "Error! Operator is not correct!" << std::endl;
-            break;
+    for(char cur : equation){
+        if(cur == '+' || cur == '-' || cur == '*' || cur == '/' || cur == '%'){
+            op = cur;
+            found_op = true;
+            continue;
+        }else if(!found_op && cur != ' ' && cur != '\n'){
+            first_num << cur;
+        }else if(found_op && cur != ' ' && cur != '\n'){
+            second_num << cur;
+        }
     }
 
-	return 0;
+    double x, y;
+    first_num >> x;
+    second_num >> y;
 
+    switch(op){
+        case '+':
+        {
+            answer = add(x, y);
+            break;
+        }
+        default:
+        {
+            answer = 0;
+            break;
+        }
+    }
+
+    return answer;
+}
+
+std::string Calculator::get_equation(){
+    print_menu();
+    std::cout << "Enter equation: ";
+    std::string result;
+    std::getline(std::cin, result);
+    return result;
+}
+
+void Calculator::print_menu(){
+    std::cout << "Calculator Menu:\n";
+    std::cout << "\tAdd +\n";
+    std::cout << "\tSubtract -\n";
+    std::cout << "\tMultiply *\n";
+    std::cout << "\tDivide \\ \n";
+    std::cout << "\tModulo %\n";
+}
+
+void Calculator::print_history(){
+    int i = 1;
+    for(const std::pair<std::string, double>& hist_ele: history){
+        std::cout << "History " << i << ": " << hist_ele.first << " = " << hist_ele.second << '\n';
+    }
 }
