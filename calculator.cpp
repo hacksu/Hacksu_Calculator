@@ -54,6 +54,26 @@ double Calculator::calculate(std::string equation){
             answer = add(x, y);
             break;
         }
+        case '-':
+        {
+            answer = subtract(x, y);
+            break;
+        }
+        case '*':
+        {
+            answer = multiply(x, y);
+            break;
+        }
+        case '/':
+        {
+            answer = divide(int(x), int(y));
+            break;
+        }
+        case '%':
+        {
+            answer = modulo(x, y);
+            break;
+        }
         default:
         {
             answer = 0;
@@ -77,8 +97,9 @@ void Calculator::print_menu(){
     std::cout << "\tAdd +\n";
     std::cout << "\tSubtract -\n";
     std::cout << "\tMultiply *\n";
-    std::cout << "\tDivide \\ \n";
+    std::cout << "\tDivide / \n";
     std::cout << "\tModulo %\n";
+    std::cout << "\t\"Exit\" to quit\n";
 }
 
 void Calculator::print_history(){
