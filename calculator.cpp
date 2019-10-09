@@ -1,3 +1,4 @@
+// Basic calculator that adds, subtracts, multiplies, and divides
 #include <iostream>
 
 int main() {
@@ -11,16 +12,16 @@ int main() {
     switch(op)
     {
         case '+': // Adds num1 by num2
-            cout << num1+num2;
+            cout << num1 + num2;
             break;
         case '-': // Subtracts num1 by num2
-            cout << num1-num2;
+            cout << num1 - num2;
             break;
         case '*': // Multiplies num1 by num2
-            cout << num1*num2;
+            cout << num1 * num2;
             break;
         case '/': // Divides num1 by num2
-            cout << num1/num2;
+            cout << num1 / num2;
 
             break;
         default:
