@@ -4,7 +4,7 @@ int main() {
     char op;
     float num1, num2;
 
-    std::cout << "Enter the mathematical statment: Number (+, -, *, /) Number:" << std::endl;
+    std::cout << "Enter the mathematical statment: Number (+, -, *, /, %) Number:" << std::endl;
     std::cin >> num1 >> op >> num2;
 
     switch(op) {
@@ -19,6 +19,9 @@ int main() {
             break;
         case '/':
             std::cout << num1 / num2;
+            break;
+        case '%':
+            std::cout << num1 % num2;
             break;
         default:
             // If the operator is other than +, -, * or /, error message is shown
