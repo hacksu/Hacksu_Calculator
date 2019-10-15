@@ -1,5 +1,6 @@
 // Basic calculator that adds, subtracts, multiplies, and divides
 #include <iostream>
+using std::cin; using std::cout; usind std::endl;
 
 int main() {
     char op;
@@ -25,12 +26,14 @@ int main() {
             cout << mult;
             break;
         case '/': // Divides num1 by num2
-			cout << div;
-
+			if(num2 != 0)
+				cout << div;
+			else
+				cout << "You cannot divide by 0!"
             break;
         default:
             // If the operator is other than +, -, * or /, error message is shown
-            std::cout << "Error! Operator is not correct!" << std::endl;
+            cout << "Error! Operator is not correct!" << endl;
             break;
     }
 	return 0;
