@@ -4,6 +4,10 @@
 int main() {
     char op;
     float num1, num2;
+	int add = num1 + num2;
+	int sub = num1 - num2;
+	int mult = num1 * num2;
+	int div = num1 / num2;
 
     cout << "Enter operator either + or - or * or /: ";
     cin >> op;
@@ -12,16 +16,16 @@ int main() {
     switch(op)
     {
         case '+': // Adds num1 by num2
-            cout << num1 + num2;
+            cout << sub;
             break;
         case '-': // Subtracts num1 by num2
-            cout << num1 - num2;
+            cout << sub;
             break;
         case '*': // Multiplies num1 by num2
-            cout << num1 * num2;
+            cout << mult;
             break;
         case '/': // Divides num1 by num2
-            cout << num1 / num2;
+			cout << div;
 
             break;
         default:
