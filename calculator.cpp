@@ -3,19 +3,14 @@
 using std::cin; using std::cout; usind std::endl;
 
 int main() {
+    char yor = 'y';
     char op;
     float num1, num2;
-	int add = num1 + num2;
-	int sub = num1 - num2;
-	int mult = num1 * num2;
-	int div = num1 / num2;
 
-    cout << "Enter operator either + or - or * or /: ";
-    cin >> op;
-    cout << "Enter two operands: ";
-    cin >> num1 >> num2;
+
     switch(op)
     {
+
         case '+': // Adds num1 by num2
             cout << sub;
             break;
@@ -31,11 +26,16 @@ int main() {
 			else
 				cout << "You cannot divide by 0!"
             break;
+        case '%':
+            std::cout << num1 % num2;
+            break;
         default:
             // If the operator is other than +, -, * or /, error message is shown
             cout << "Error! Operator is not correct!" << endl;
             break;
     }
+
 	return 0;
+
 
 }
