@@ -24,13 +24,13 @@ int main() {
 			if (num2 != 0)
 				cout << div;
 			else
-				cout << "You cannot divide by 0!";
+				cout << "The second number is 0. You cannot divide by 0!";
             break;
         case '%': // Returns remainder of num1 divided by num2
 			if (num2 != 0)
 				cout << num1 % num2;
 			else
-				cout << "You cannot divide by 0!";
+				cout << "The second number is 0. You cannot divide by 0!";
             break;
         default:
             // If the operator is other than +, -, * or /, error message is shown
