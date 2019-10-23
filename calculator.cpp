@@ -1,71 +1,44 @@
 // Basic calculator that adds, subtracts, multiplies, and divides
 #include <iostream>
+using std::cin; using std::cout; usind std::endl;
 
 int main() {
     char yor = 'y';
     char op;
     float num1, num2;
-    
-    while(yor == 'y' || yor == 'Y') {
-        std::cout << "Enter the mathematical statment: Number (+, -, *, /, %) Number:" << std::endl;
-        std::cin >> num1 >> op >> num2;
-        switch(op) {
-            case '+':
-                std::cout << num1 + num2;
-                break;
-            case '-':
-                std::cout << num1 - num2;
-                break;
-            case '*':
-                std::cout << num1 * num2;
-                break;
-            case '/':
-                std::cout << num1 / num2;
-                break;
-            case '%':
-                std::cout << num1 % num2;
-                break;
-            default:
-                // If the operator is other than +, -, * or /, error message is shown
-                std::cout << "Error! Operator is not correct!" << std::endl;
-                break;
-        }
 
-        std::cout << "Continue?(Y or N)" << std::endl;
-        std::cin >> yor;
-    }
-        
-=======
-
-    std::cout << "Enter the mathematical statment: Number (+, -, *, /, %) Number:" << std::endl;
-    std::cin >> num1 >> op >> num2;
 
     switch(op)
     {
 
         case '+': // Adds num1 by num2
-            cout << num1 + num2;
+            cout << sub;
             break;
         case '-': // Subtracts num1 by num2
-            cout << num1 - num2;
+            cout << sub;
             break;
         case '*': // Multiplies num1 by num2
-            cout << num1 * num2;
+            cout << mult;
             break;
         case '/': // Divides num1 by num2
-            cout << num1 / num2;
-
+			if (num2 != 0)
+				cout << div;
+			else
+				cout << "You cannot divide by 0!";
             break;
-        case '%':
-            std::cout << num1 % num2;
+        case '%': // Returns remainder of num1 divided by num2
+			if (num2 != 0)
+				cout << num1 % num2;
+			else
+				cout << "You cannot divide by 0!";
             break;
         default:
             // If the operator is other than +, -, * or /, error message is shown
-            std::cout << "Error! Operator is not correct!" << std::endl;
+            cout << "Error! Operator is not correct!" << endl;
             break;
     }
 
 	return 0;
->>>>>>> da27672ba4e8ab874975d6af178cc6783edfab52
+
 
 }
